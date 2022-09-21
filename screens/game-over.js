@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     image: {
-        width: 200,
-        height: 200,
+        width: 300,
+        height: 300,
     },
     resultContainer: {
         width: width * 0.8,
@@ -25,23 +25,30 @@ const styles = StyleSheet.create({
         color: colors.text,
         textAlign: 'center',
         paddingVertical: 5,
-    }
+    },
+    textAgain: {
+        fontFamily: 'Lato-Bold',
+        fontSize: 24,
+        color: colors.text,
+        textAlign: 'center',
+        paddingVertical: 20,
+    },
 })
 
 const GameOverScreen = ({ roundsNumber, userNumber, onRestart }) => {
     return (
         <View style={styles.container}>
             <Card style={styles.resultContainer}>
-            <Image source={{ uri: 'https://img.freepik.com/vector-gratis/juego-terminado-efecto-falla_225004-661.jpg?w=2000'}} style={styles.image} />
-            
+                <Image source={{ uri: 'https://img.freepik.com/vector-gratis/juego-terminado-efecto-falla_225004-661.jpg?w=2000' }} style={styles.image} />
                 <Text style={styles.textResult}>Intentos: {roundsNumber}</Text>
                 <Text>El numero era: {userNumber}</Text>
-            
-            <Button 
-                title="Reiniciar"
-                onPress={onRestart}
-                color={colors.primary}
-            />
+                <Text style={styles.textAgain}>Juguemos de nuevo!</Text>
+                <Button style={styles.button}
+                    title="Reiniciar"
+                    onPress={onRestart}
+                    color={colors.primary}
+                />
+                
             </Card>
         </View>
     )

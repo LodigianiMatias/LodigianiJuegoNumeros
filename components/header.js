@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import { colors } from "../constants/colors";
 
 const styles = StyleSheet.create({
@@ -14,12 +14,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: colors.white,
         fontFamily: 'Lato-Bold',
-    }
+    },
 });
 
 const Header = ({ title }) => {
     return (
-        <View style={styles.header}>
+        <View style={styles.header}>          
             <Text style={styles.title}>{title}</Text>
         </View>
     )
